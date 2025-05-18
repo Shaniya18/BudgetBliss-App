@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
 
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context=".MainActivity">
+    tools:context=".views.activities.MainActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/pink"
         app:itemActiveIndicatorStyle="@style/App.CustomIndicator"
         app:itemIconTint="@color/white"
@@ -23,31 +26,31 @@
     <androidx.constraintlayout.widget.ConstraintLayout
 
         android:id="@+id/constraintLayout"
-        android:layout_width="505dp"
-        android:layout_height="868dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/materialToolbar"
-            android:layout_width="504dp"
-            android:layout_height="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
             android:background="@color/pink"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.001"
-            app:titleTextColor="@color/white"/>
+            app:layout_constraintVertical_bias="0.0"
+            app:titleTextColor="@color/white" />
 
         <TextView
             android:id="@+id/currentDate"
-            android:layout_width="505dp"
-            android:layout_height="117dp"
+            android:layout_width="match_parent"
+            android:layout_height="115dp"
             android:layout_marginTop="4dp"
             android:layout_weight="1"
             android:background="@color/pink"
@@ -58,16 +61,16 @@
             android:textSize="30sp"
             app:layout_constraintBottom_toTopOf="@+id/tabLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.444"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
-            app:layout_constraintVertical_bias="0.093"
+            app:layout_constraintVertical_bias="0.105"
             tools:ignore="HardcodedText" />
 
         <ImageView
             android:id="@+id/previousDateBtn"
             android:layout_width="36dp"
             android:layout_height="42dp"
+            android:layout_marginStart="28dp"
             android:layout_marginTop="21dp"
             android:layout_marginBottom="22dp"
             app:layout_constraintBottom_toBottomOf="@+id/currentDate"
@@ -80,16 +83,18 @@
             android:layout_width="36dp"
             android:layout_height="46dp"
             android:layout_marginTop="17dp"
+            android:layout_marginEnd="28dp"
             android:layout_marginBottom="22dp"
             app:layout_constraintBottom_toBottomOf="@+id/currentDate"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/currentDate"
             app:srcCompat="@drawable/next" />
 
+
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
-            android:layout_width="506dp"
-            android:layout_height="68dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:background="@color/pink"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
             app:layout_constraintEnd_toEndOf="parent"
@@ -117,7 +122,7 @@
                 android:text="Yearly" />
 
             <com.google.android.material.tabs.TabItem
-                android:id="@+id/tabItem"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Notes" />
@@ -125,7 +130,7 @@
 
         <LinearLayout
             android:id="@+id/linearLayout2"
-            android:layout_width="502dp"
+            android:layout_width="match_parent"
             android:layout_height="99dp"
             android:layout_marginTop="218dp"
             android:orientation="horizontal"
@@ -205,27 +210,35 @@
 
         </LinearLayout>
 
+
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton"
-            android:layout_width="374dp"
-            android:layout_height="50dp"
+            android:layout_width="55dp"
+            android:layout_height="53dp"
             android:layout_marginEnd="36dp"
             android:layout_marginBottom="116dp"
             android:clickable="true"
+            android:contentDescription="Add new transaction"
             app:backgroundTint="#E91E63"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@android:drawable/ic_input_add"
-            app:tint="@color/white"/>
+            app:tint="@color/white" />
+
 
         <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/transactionsList"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginRight="3dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            tools:listitem="@layout/row_transaction" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
