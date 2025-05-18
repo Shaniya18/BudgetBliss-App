@@ -1,27 +1,72 @@
-package com.example.budget;
+package com.example.budget.views.activities;
 
 import android.os.Bundle;
 import android.view.Menu;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.budget.databinding.ActivityMainBinding;
+import com.example.budget.databinding.ActivityHomeBinding;
+import com.example.budget.views.fragments.AddTransactionFragment;
+import com.example.budget.R;
+import com.example.budget.databinding.ActivityHomeBinding;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import com.google.android.material.tabs.TabLayout;
+
+
+
 
 public class MainActivity extends AppCompatActivity {
 
-    ActivityMainBinding binding;
+    ActivityHomeBinding binding;
+
+    Calendar calendar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+
+        binding = ActivityHomeBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         setSupportActionBar(binding.materialToolbar);
         getSupportActionBar().setTitle("Transactions");
+
+        calendar = Calendar.getInstance();
+        updateDate();
+
+        // Fix TabLayout access
+        TabLayout tabLayout = binding.tabLayout;
+
+        // Modify the "Notes" tab (Index 3)
+        TabLayout.Tab notesTab = tabLayout.getTabAt(3);
+        if (notesTab != null) {
+            notesTab.setText("Updated Notes");
+        }
+
+        binding.nextDateBtn.setOnClickListener(c-> {
+            calendar.add(Calendar.DATE,1);
+            updateDate();
+        });
+
+        binding.previousDateBtn.setOnClickListener(c->{
+            calendar.add(Calendar.DATE, -1);
+            updateDate();
+        });
+
+        binding.floatingActionButton.setOnClickListener(c-> {
+            new AddTransactionFragment().show(getSupportFragmentManager(), null);
+        });
+    }
+
+
+
+    void updateDate(){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM, yyyy");
+        binding.currentDate.setText(dateFormat.format(calendar.getTime()));
     }
 
     @Override
