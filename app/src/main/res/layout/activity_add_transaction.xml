@@ -27,6 +27,7 @@ android:background="@color/pink">
 </RelativeLayout>
 
     <EditText
+        android:id="@+id/user_amount_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="12dp"
@@ -39,6 +40,7 @@ android:background="@color/pink">
         android:padding="15dp" />
 
     <EditText
+        android:id="@+id/user_note_add"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginLeft="12dp"
@@ -64,6 +66,7 @@ android:background="@color/pink">
         android:orientation="horizontal">
 
     <CheckBox
+        android:id="@+id/expense_check_box"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -71,6 +74,7 @@ android:background="@color/pink">
         android:textColor="@color/black"/>
 
     <CheckBox
+        android:id="@+id/income_check_box"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -80,6 +84,7 @@ android:background="@color/pink">
     </LinearLayout>
 
     <Button
+        android:id="@+id/btn_add_transaction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
