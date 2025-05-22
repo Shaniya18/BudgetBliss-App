@@ -9,22 +9,22 @@
     android:orientation="vertical"
     tools:context=".AddTransactionActivity">
 
-<RelativeLayout
-android:id="@+id/custom_tool_add_transation"
-android:layout_width="match_parent"
-android:layout_height="?actionBarSize"
-android:background="@color/pink">
+    <RelativeLayout
+        android:id="@+id/custom_tool_add_transation"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/pink">
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Add Transaction"
-    android:textSize="18sp"
-    android:textStyle="bold"
-    android:textAlignment="center"
-    android:textColor="@color/white"
-    android:layout_centerVertical="true" />
-</RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Transaction"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
 
     <EditText
         android:id="@+id/user_amount_add"
@@ -35,7 +35,7 @@ android:background="@color/pink">
         android:layout_marginRight="12dp"
         android:background="@drawable/edit_text_bg"
         android:elevation="4dp"
-        android:hint="Amount"
+        android:hint="$ Amount"
         android:inputType="numberDecimal"
         android:padding="15dp" />
 
@@ -50,7 +50,7 @@ android:background="@color/pink">
         android:elevation="4dp"
         android:hint="Note"
         android:gravity="start"
-        android:inputType="numberDecimal"
+        android:inputType="text"
         android:textAlignment="textStart"
         android:padding="15dp" />
     <LinearLayout
@@ -65,21 +65,21 @@ android:background="@color/pink">
         android:layout_marginRight="12dp"
         android:orientation="horizontal">
 
-    <CheckBox
-        android:id="@+id/expense_check_box"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Expense"
-        android:textColor="@color/black"/>
+        <CheckBox
+            android:id="@+id/expense_check_box"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Expense"
+            android:textColor="@color/black"/>
 
-    <CheckBox
-        android:id="@+id/income_check_box"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textColor="@color/black"
-        android:text="Income" />
+        <CheckBox
+            android:id="@+id/income_check_box"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:text="Income" />
 
     </LinearLayout>
 
@@ -95,4 +95,3 @@ android:background="@color/pink">
         android:elevation="4dp"
         android:textColor="@color/white"/>
 </LinearLayout>
-
