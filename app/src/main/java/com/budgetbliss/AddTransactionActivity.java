@@ -66,35 +66,56 @@ public class AddTransactionActivity extends AppCompatActivity {
                 String amount = binding.userAmountAdd.getText().toString().trim();
                 String note = binding.userNoteAdd.getText().toString().trim();
 
-                if (amount.length()<=0) {
+                if (amount.isEmpty()) {
+                    binding.userAmountAdd.setError("Amount is required");
                     return;
                 }
 
-                if(type.length()<=0){
-                    Toast.makeText(AddTransactionActivity.this, "Select transaction type", Toast.LENGTH_SHORT).show();
+                if (type.isEmpty()) {
+                    Toast.makeText(AddTransactionActivity.this, "Please select transaction type", Toast.LENGTH_SHORT).show();
+                    return;
                 }
+
+                if (note.isEmpty()) {
+                    note = "No description"; // Default note if empty
+                }
+
+                // Continue with adding transaction...
                 String id = UUID.randomUUID().toString();
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                String currentDate = sdf.format(new Date());
+
+
                 // Transaction map
                 Map<String, Object> transaction = new HashMap<>();
                 transaction.put("id", id);
-                transaction.put("amount",amount);
+                transaction.put("amount", amount);
                 transaction.put("note", note);
                 transaction.put("type", type);
+                transaction.put("date", currentDate);
 
-
-                fStore.collection("Data History").document(firebaseAuth.getUid()).collection("Notes").document(id).set(transaction)
-
+                // Save to Firestore
+                fStore.collection("DataHistory").document(firebaseAuth.getUid()).collection("Notes").document(id)
+                        .set(transaction)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                Toast.makeText(AddTransactionActivity.this, "Added", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(AddTransactionActivity.this, "Transaction added successfully", Toast.LENGTH_SHORT).show();
+                                // Clear fields
+                                binding.userAmountAdd.setText("");
+                                binding.userNoteAdd.setText("");
+                                binding.expenseCheckBox.setChecked(false);
+                                binding.incomeCheckBox.setChecked(false);
+                                type = "";
 
+                                // Finish activity
+                                finish();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(AddTransactionActivity.this,e.getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(AddTransactionActivity.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });
             }
