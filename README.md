@@ -20,19 +20,7 @@ Logout Functionality: Secure logout with session management
 
 🛠️ Technologies Used
 
-Language: Java
-
-IDE: Android Studio
-
-Backend: Firebase
-
-Firebase Authentication
-
-Firebase Firestore
-
-UI: XML Layouts with View Binding
-
-Architecture: Activity-based Android architecture
+Language: Java,IDE: Android Studio,Backend: Firebase,Firebase Authentication,Firebase Firestore,UI: XML Layouts with View Binding,Architecture: Activity-based Android architecture
 
 ![Splashscreen](https://github.com/user-attachments/assets/864da0c2-8ad6-47b9-be4b-9663877895fa)
 
