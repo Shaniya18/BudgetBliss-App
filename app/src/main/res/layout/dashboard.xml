@@ -7,7 +7,9 @@
     android:background="@color/Azure"
     tools:context=".DashboardActivity">
 
+
     <RelativeLayout
+
         android:id="@+id/custom_tool_bar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
@@ -22,13 +24,24 @@
             android:textAlignment="center"
             android:textColor="@color/white"
             android:layout_centerVertical="true" />
+        <Button
+            android:id="@+id/logout_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp" />
     </RelativeLayout>
 
-    <androidx.cardview.widget.CardView
 
+    <androidx.cardview.widget.CardView
         android:id="@+id/card_view_labels"
-        android:layout_width="wrap_content"
-        android:layout_height="116dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/custom_tool_bar"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
@@ -39,15 +52,13 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -57,10 +68,10 @@
                     android:textSize="18sp" />
 
                 <TextView
+                    android:id="@+id/total_income"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_gravity="end"
                     android:text="000"
                     android:textColor="@color/greenColor"
                     android:textSize="18sp" />
@@ -69,8 +80,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -80,10 +89,10 @@
                     android:textSize="18sp" />
 
                 <TextView
+                    android:id="@+id/total_Expense"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_gravity="end"
                     android:text="000"
                     android:textColor="@color/redColor"
                     android:textSize="18sp" />
@@ -92,8 +101,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -103,37 +110,39 @@
                     android:textSize="18sp" />
 
                 <TextView
+                    android:id="@+id/total_balance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_gravity="end"
                     android:text="000"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
             </RelativeLayout>
-        </LinearLayout>
 
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
+
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/card_view_labels"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
         android:padding="10dp">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/history_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/history_recycler_view" />
+            android:layout_height="wrap_content" />
     </androidx.core.widget.NestedScrollView>
+
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/add_floating_btn"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
+        android:elevation="4dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="24dp"
@@ -154,13 +163,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/baseline_add_24" />
-           <TextView
-               android:layout_toRightOf="@+id/add_img"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_centerVertical="true"
-               android:text="Add Transaction"
-               android:textColor="@color/white"/>
+            <TextView
+                android:layout_toRightOf="@+id/add_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Add Transaction"
+                android:textColor="@color/white"/>
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
