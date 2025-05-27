@@ -1,4 +1,5 @@
 Budget Bliss - Personal Finance Management App
+
 A simple and intuitive Android application for managing personal finances, built with Java and Firebase. Track your income and expenses with ease while maintaining a clear overview of your financial health.
 
 *Features
