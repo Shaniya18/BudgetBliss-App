@@ -33,3 +33,4 @@ Firebase Firestore
 UI: XML Layouts with View Binding
 
 Architecture: Activity-based Android architecture
+
