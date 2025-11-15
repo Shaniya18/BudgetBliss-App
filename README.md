@@ -1,6 +1,4 @@
 
----
-
 # **Budget Bliss – Personal Finance Management App**
 
 A simple and intuitive **Android application** for managing personal finances, built with **Java** and **Firebase**.
