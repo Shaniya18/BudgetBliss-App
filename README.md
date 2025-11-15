@@ -1,26 +1,44 @@
-Budget Bliss - Personal Finance Management App
+Here is your README **properly formatted, clean, and professional**:
 
-A simple and intuitive Android application for managing personal finances, built with Java and Firebase. Track your income and expenses with ease while maintaining a clear overview of your financial health.
+---
 
-📱 Features
+# **Budget Bliss – Personal Finance Management App**
 
-User Authentication: Secure login and registration using Firebase Auth
+A simple and intuitive **Android application** for managing personal finances, built with **Java** and **Firebase**.
+Track your income and expenses with ease while maintaining a clear overview of your financial health.
 
-Transaction Management: Add, view, and track income and expense transactions
+---
 
-Real-time Data: All data is stored and synced using Firebase Firestore
+## 📱 **Features**
 
-Financial Overview: View total income, expenses, and current balance
+* **User Authentication** – Secure login and registration using Firebase Auth
+* **Transaction Management** – Add, view, and track income and expense entries
+* **Real-time Data Sync** – All data stored and updated using Firebase Firestore
+* **Financial Overview** – View total income, total expenses, and current balance
+* **Transaction History** – Complete list of all transactions with date & time
+* **Splash Screen** – Professional animated launch experience
+* **Logout Functionality** – Secure session management and logout
 
-Transaction History: Complete history of all transactions with date and time stamps
+---
 
-Splash Screen: Professional app launch experience
+## 🛠️ **Technologies Used**
 
-Logout Functionality: Secure logout with session management
+* **Language:** Java
+* **IDE:** Android Studio
+* **Backend:** Firebase
+* **Firebase Services:**
 
-🛠️ Technologies Used
+  * Firebase Authentication
+  * Firebase Firestore
+* **UI:** XML Layouts with View Binding
+* **Architecture:** Activity-based Android architecture
 
-Language: Java,IDE: Android Studio,Backend: Firebase,Firebase Authentication,Firebase Firestore,UI: XML Layouts with View Binding,Architecture: Activity-based Android architecture
+---
+
+## 🖼️ **Screenshots**
+
+### Splash Screen
 
 ![Splashscreen](https://github.com/user-attachments/assets/864da0c2-8ad6-47b9-be4b-9663877895fa)
 
+---
